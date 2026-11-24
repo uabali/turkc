@@ -23,8 +23,9 @@ TurkC is a minimal version of the C programming language. Keywords are changed t
 2. **Compilation:**
    ```
    flex scanner.l
-   gcc lex.yy.c -lfl -o scanner
+   gcc lex.yy.c -o scanner
    ```
+   Or simply run `make` (`make test` runs both samples, `make clean` removes the binary).
 3. **Testing:**
    ```
    ./scanner < test1.tc
@@ -105,7 +106,10 @@ PUNCTUATION: }
 - `scanner.l`: Flex source code.
 - `lex.yy.c`: Generated C code.
 - `test1.tc`, `test2.tc`: Test source files.
-- `scanner`: Compiled executable.
+- `Makefile`: Build and test shortcuts.
+- `scanner`: Compiled executable (build output, not tracked in git; produced by the steps above).
+
+Note: the sample `.tc` files use Windows (CRLF) line endings; the carriage returns are reported as `UNKNOWN` tokens unless stripped (`make test` strips them). The outputs shown below were produced without them.
 
 ---
 
@@ -132,8 +136,9 @@ TurkC, C programlama dilinin tiny bir versiyonudur. Anahtar kelimeler Türkçe o
 2. **Derleme:**
    ```
    flex scanner.l
-   gcc lex.yy.c -lfl -o scanner
+   gcc lex.yy.c -o scanner
    ```
+   Ya da doğrudan `make` çalıştırın (`make test` iki örneği de çalıştırır, `make clean` çalıştırılabilir dosyayı siler).
 3. **Test Etme:**
    ```
    ./scanner < test1.tc
