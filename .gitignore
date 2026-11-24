@@ -1,0 +1,10 @@
+# Build output
+scanner
+*.o
+*.exe
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
